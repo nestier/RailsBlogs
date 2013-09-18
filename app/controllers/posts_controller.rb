@@ -3,7 +3,10 @@ class PostsController < ApplicationController
 	end
 	def show
 		@post = Post.find(params[:id])
-	end		
+	end
+	def index
+		@post =Post.all
+	end			
 	def create
 		@post = Post.new(post_params)
 
