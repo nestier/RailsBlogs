@@ -13,8 +13,10 @@ class PostsController < ApplicationController
 	end	
 
 	def create
+		#puts current_user.id
+		#exit
   		@post = Post.new(params[:post].permit(:title, :text))
- 
+ 		@post.user_id = current_user.id
   		if @post.save
     		redirect_to @post
   		else
